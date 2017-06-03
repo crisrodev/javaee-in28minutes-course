@@ -22,14 +22,31 @@
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="/list-todos.do">Todos</a></li>
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/logout.do">Logout</a></li>
+		</ul>
 	</nav>
 	<div class="container">
-		<p style="color:red">${errorMessage}</p>
-		<form action="/login.do" method="post">
-			Name: <input type="text" name="name">
-			Password: <input type="password" name="password">
-			<input type="submit" value="login"> 
-		</form>
+		<h1>Welcome ${name}</h1>
+		
+		<table class="table table-striped">
+			<caption>Your Todos are:</caption>
+			<thead>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>	
+					<td>${todo.name}</td>
+					<td>${todo.category}</td>
+					<td><a class="btn btn-danger" href="/delete-todo.do?todo=${todo.name}">Delete</a></td>
+				</tr>
+			</c:forEach>
+			</tbody>
+		</table>
+		<a class="btn btn-success" href="/add-todo.do">Add New Todo</a>
 	</div>
 	<footer class="footer">
 		<p>footer content</p>

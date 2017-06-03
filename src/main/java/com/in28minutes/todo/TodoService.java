@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class TodoService {
 	private static List<Todo> todos = new ArrayList<Todo>();
 	static{
-		todos.add(new Todo("Learn to cook"));
-		todos.add(new Todo("Learn another thing"));
+		todos.add(new Todo("Learn to cook", "Study"));
+		todos.add(new Todo("Learn another thing", "Study"));
 	}
 	
 	public List<Todo> retrieveTodos() {
