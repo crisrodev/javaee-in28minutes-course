@@ -14,13 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 @WebFilter(urlPatterns="*.do")
 public class LoginRequiredFilter implements Filter {
 
-	public void init(FilterConfig arg0) throws ServletException {	
-		
+	public void init(FilterConfig arg0) throws ServletException {		
 	}
 	
 	public void destroy() {
-		
-		
 	}
 	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
